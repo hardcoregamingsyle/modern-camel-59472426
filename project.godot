@@ -33,7 +33,10 @@ window/stretch/aspect="keep"
 [rendering]
 
 renderer/rendering_method="forward_plus"
-lights/directional_lights/shadow_atlas/size=4096
-environment/glow/enabled=false
-environment/ssao/enabled=true
-environment/ssil/enabled=false
+renderer/rendering_method.mobile="gl_compatibility"
+renderer/rendering_method.webgl="gl_compatibility"
+quality/3d/msaa_3d=2
+quality/3d/screen_space_aa="FXAA"
+quality/filters/default_filter=2
+quality/filters/ssao_enabled=true
+quality/filters/ssil_enabled=true
