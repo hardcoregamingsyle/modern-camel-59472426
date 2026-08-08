@@ -1,0 +1,38 @@
+# Godot 4+ generated cache and editor state
+.godot/
+*.godot.cache
+
+# Imported/exported binaries
+*.import
+*.translation
+*.tmp
+
+# OS noise
+.DS_Store
+Thumbs.db
+Desktop.ini
+desktop.ini
+
+# Editor/IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# Build artifacts
+/build/
+/dist/
+/export/
+*.apk
+*.aab
+*.exe
+*.pck
+
+# User data (local saves, caches, logs)
+user://
+*.log
+
+# Test artifacts
+.coverage/
+.gdunit/
