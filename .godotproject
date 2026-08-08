@@ -1,0 +1,48 @@
+; Godot project configuration (alternate entry file).
+; Godot 4.x loads "project.godot" by default; this file provides the
+; same configuration under the legacy/alternate name so editors and CI
+; harnesses that look for ".godotproject" can open the project too.
+;
+; IMPORTANT: keep this file in sync with project.godot.
+
+config_version=5
+
+[application]
+
+config/name="FlightSimulator"
+config/description="A lightweight, physics-driven multi-aircraft flight simulator with animated control surfaces, helicopters, and airports."
+config/version="1.0.0"
+run/main_scene="res://scenes/main.tscn"
+config/features=PackedStringArray("4.2", "Forward Plus")
+config/icon="res://assets/textures/icon.svg"
+
+[autoload]
+
+Main="*res://scripts/Main.gd"
+
+[display]
+
+window/size/viewport_width=1280
+window/size/viewport_height=720
+window/size/window_width_override=1280
+window/size/window_height_override=720
+window/size/fullscreen=false
+window/size/resizable=true
+window/stretch/mode="disabled"
+window/stretch/aspect="keep"
+
+[rendering]
+
+; Keep the sim light on modest hardware.
+renderer/rendering_method="mobile"
+renderer/rendering_method.mobile="mobile"
+anti_aliasing/quality/msaa_3d=1
+anti_aliasing/quality/msaa_2d=1
+shadows/quality/soft_shadow_filter_quality=1
+lights_and_shadows/directional_shadow_size=2048
+environment/defaults/default_clear_color=Color(0.529, 0.808, 0.922, 1)
+
+[physics]
+
+common/physics_ticks_per_second=60
+common/physics_jitter_fix=0.5

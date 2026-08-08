@@ -1,20 +1,42 @@
-[gd_scene load_steps=2 format=3 uid="uid://bs0main0flight"]
+[gd_scene load_steps=5 format=3 uid="uid://bs0main0flight"]
 
 [ext_resource type="Script" path="res://scripts/Main.gd" id="1_main"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_sky"]
+sky_top_color = Color(0.247, 0.553, 0.855, 1)
+sky_horizon_color = Color(0.753, 0.875, 0.949, 1)
+ground_bottom_color = Color(0.243, 0.302, 0.271, 1)
+ground_horizon_color = Color(0.573, 0.616, 0.553, 1)
+
+[sub_resource type="Sky" id="Sky_sky"]
+sky_material = SubResource("ProceduralSkyMaterial_sky")
+radiance_size = 2
+
+[sub_resource type="Environment" id="Environment_env"]
+background_mode = 2
+sky = SubResource("Sky_sky")
+ambient_light_source = 3
+ambient_light_energy = 0.6
+tone_mapper = 3
+glow_enabled = false
+fog_enabled = true
+fog_light_color = Color(0.753, 0.875, 0.949, 1)
+fog_density = 0.0001
 
 [node name="Main" type="Node"]
 script = ExtResource("1_main")
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_env")
 
 [node name="Sun" type="DirectionalLight3D" parent="."]
-light_energy = 1.0
-transform = Transform3D(1, 0, 0, 0, 0.707107, 0.707107, 0, -0.707107, 0.707107, 0, 50, 0)
+transform = Transform3D(0.92388, 0, 0.382683, -0.270598, 0.707107, 0.653281, -0.270598, -0.707107, 0.653281, 0, 100, 0)
+light_color = Color(1, 0.984314, 0.901961, 1)
+light_energy = 1.2
 shadow_enabled = true
-
-directional_shadow_max_distance = 500.0
-
-[node name="Environment" type="Node3D" parent="."]
+shadow_bias = 0.05
+directional_shadow_max_distance = 1000.0
+directional_shadow_fade_start = 0.8
 
 [node name="AircraftManager" type="Node3D" parent="."]
 
